@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SALSAIVA</title>
+
+    <link
+      rel="shortcut icon"
+      href="./images/Logos/favicon-32x32-removebg-preview.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+
+    <header class="shop__header">
+      <nav class="nav container">
+        <div class="nav__logo">
+          <h2 class="nav__title">SALSAIVA SHOP</h2>
+        </div>
+
+        <ul class="nav__links">
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+
+          <li>
+            <a href="log in.html">Mi cuenta</a>
+          </li>
+        </ul>
+
+        <div class="cart__icon" id="cartIcon">
+          🛒
+          <span id="cartCount">0</span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero__shop">
+      <div class="hero__content container">
+        <h1>Bienvenido a SALSAIVA</h1>
+
+        <p>
+          Descubre nuestros chutneys artesanales elaborados con frutas naturales
+          y sabores únicos.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+
+    <main class="container">
+      <h2 class="subtitle">Nuestros Sabores</h2>
+
+      <section class="products__grid">
+        <!-- LIMON -->
+
+        <article class="product__card">
+          <img src="./images/imágenes/limón.png" class="product__img" />
+
+          <h3>Chutney de Limón</h3>
+
+          <p>225 ml • Bs 30</p>
+
+          <button class="btn addCart" data-name="Limón" data-price="30">
+            Agregar al carrito
+          </button>
+
+          <button
+            class="btn detailsBtn"
+            data-title="Chutney de Limón"
+            data-details="Ingredientes: limón, azúcar, vinagre, especias naturales y sal. Producto artesanal sin conservantes artificiales."
+          >
+            Detalles
+          </button>
+        </article>
+
+        <!-- TOMATE -->
+
+        <article class="product__card">
+          <img src="./images/imágenes/tomate.png" class="product__img" />
+
+          <h3>Chutney de Tomate</h3>
+
+          <p>485 ml • Bs 40</p>
+
+          <button class="btn addCart" data-name="Tomate" data-price="40">
+            Agregar al carrito
+          </button>
+
+          <button
+            class="btn detailsBtn"
+            data-title="Chutney de Tomate"
+            data-details="Ingredientes: tomate, azúcar, vinagre, especias naturales y sal. Producto artesanal de calidad premium."
+          >
+            Detalles
+          </button>
+        </article>
+
+        <!-- PIÑA -->
+
+        <article class="product__card">
+          <img src="./images/imágenes/piña.png" class="product__img" />
+
+          <h3>Chutney de Piña</h3>
+
+          <p>225 ml • Bs 30</p>
+
+          <button class="btn addCart" data-name="Piña" data-price="30">
+            Agregar al carrito
+          </button>
+
+          <button
+            class="btn detailsBtn"
+            data-title="Chutney de Piña"
+            data-details="Ingredientes: piña, azúcar, vinagre, especias naturales y sal. Preparado artesanalmente con frutas frescas."
+          >
+            Detalles
+          </button>
+        </article>
+
+        <!-- MANGO -->
+
+        <article class="product__card">
+          <img src="./images/imágenes/mango.png" class="product__img" />
+
+          <h3>Chutney de Mango</h3>
+
+          <p>980 ml • Bs 60</p>
+
+          <button class="btn addCart" data-name="Mango" data-price="60">
+            Agregar al carrito
+          </button>
+
+          <button
+            class="btn detailsBtn"
+            data-title="Chutney de Mango"
+            data-details="Ingredientes: mango, azúcar, vinagre, especias naturales y sal. Sabor tropical y artesanal."
+          >
+            Detalles
+          </button>
+        </article>
+
+        <!-- LOCOTO -->
+
+        <article class="product__card">
+          <img src="./images/imágenes/locoto.png" class="product__img" />
+
+          <h3>Chutney de Locoto</h3>
+
+          <p>485 ml • Bs 40</p>
+
+          <button class="btn addCart" data-name="Locoto" data-price="40">
+            Agregar al carrito
+          </button>
+
+          <button
+            class="btn detailsBtn"
+            data-title="Chutney de Locoto"
+            data-details="Ingredientes: locoto, azúcar, vinagre, especias naturales y sal. Elaborado con picante natural y control de calidad."
+          >
+            Detalles
+          </button>
+        </article>
+      </section>
+    </main>
+
+    <!-- CARRITO -->
+
+    <aside class="cart" id="cart">
+      <div class="cart__header">
+        <h3>Tu carrito</h3>
+
+        <span id="closeCart">✖</span>
+      </div>
+
+      <div id="cartItems"></div>
+
+      <div class="cart__footer">
+        <h4>Total: Bs <span id="cartTotal">0</span></h4>
+
+        <button class="checkoutBtn">Finalizar pedido</button>
+      </div>
+    </aside>
+
+    <!-- MODAL DETALLES -->
+
+    <section class="modal" id="modal">
+      <div class="modal__content">
+        <h3 id="modalTitle"></h3>
+
+        <p id="modalText"></p>
+
+        <button id="closeModal" class="btn">Cerrar</button>
+      </div>
+    </section>
+
+    <script src="./js/nav.js"></script>
+  </body>
+</html>
