@@ -55,6 +55,9 @@ signUpForm.addEventListener("submit", async (e) => {
     password,
   });
 
+  console.log("Usuario:", data?.user);
+  console.log("Sesion:", data?.session);
+
   if (error) {
     alert(error.message);
     return;
@@ -74,7 +77,9 @@ signUpForm.addEventListener("submit", async (e) => {
     ]);
 
     if (perfilError) {
-      console.log(perfilError);
+      console.error("Error perfil:", perfilError);
+      alert("Error al crear perfil: " + perfilError.message);
+      return;
     }
   }
 
