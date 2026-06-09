@@ -11,6 +11,7 @@
       href="./images/Logos/favicon-32x32-removebg-preview.png"
       type="image/x-icon"
     />
+
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/nav.css" />
   </head>
@@ -19,27 +20,35 @@
     <!-- HEADER -->
 
     <header class="shop__header">
-      <nav class="nav container">
-        <div class="nav__logo">
-          <h2 class="nav__title">SALSAIVA SHOP</h2>
-        </div>
+  <nav class="nav container">
+    <div class="nav__logo">
+      <h2 class="nav__title">SALSAIVA SHOP</h2>
+    </div>
 
-        <ul class="nav__links">
-          <li>
-            <a href="index.html">Inicio</a>
-          </li>
+    <ul class="nav__links">
+      <li>
+        <a href="index.html">Inicio</a>
+      </li>
 
-          <li>
-            <a href="log in.html">Mi cuenta</a>
-          </li>
-        </ul>
+      <li>
+        <a href="#productos">Menú</a>
+      </li>
 
-        <div class="cart__icon" id="cartIcon">
-          🛒
-          <span id="cartCount">0</span>
-        </div>
-      </nav>
-    </header>
+<div class="admin" id="adminPanel" style="display: none;">
+  Admin
+</div>
+
+      <li>
+        <a href="log in.html">Mi cuenta</a>
+      </li>
+    </ul>
+
+    <div class="cart__icon" id="cartIcon">
+      🛒
+      <span id="cartCount">0</span>
+    </div>
+  </nav>
+</header>
 
     <!-- HERO -->
 
@@ -56,7 +65,7 @@
 
     <!-- PRODUCTOS -->
 
-    <main class="container">
+    <main class="container" id="productos">
       <h2 class="subtitle">Nuestros Sabores</h2>
 
       <section class="products__grid">
@@ -186,9 +195,61 @@
       <div class="cart__footer">
         <h4>Total: Bs <span id="cartTotal">0</span></h4>
 
-        <button class="checkoutBtn">Finalizar pedido</button>
+        <button
+          class="checkoutBtn"
+          onclick="document.getElementById('productos').scrollIntoView({behavior:'smooth'})"
+        >
+          Ver Menú
+        </button>
+
+        <button class="checkoutBtn">
+          Finalizar pedido
+        </button>
       </div>
     </aside>
+
+    <!-- PANEL ADMIN -->
+
+<aside class="admin-panel" id="adminPanel">
+  <div class="cart__header">
+    <h3>Panel Admin</h3>
+
+    <span id="closeAdmin">✖</span>
+  </div>
+
+  <div class="admin-content">
+    <h4>Agregar Producto</h4>
+
+    <input type="file" id="productImage" />
+
+    <input
+      type="text"
+      id="productName"
+      placeholder="Nombre del producto"
+    />
+
+    <input
+      type="number"
+      id="productPrice"
+      placeholder="Precio"
+    />
+
+    <select id="productSize">
+      <option>225 ml</option>
+      <option>485 ml</option>
+      <option>980 ml</option>
+    </select>
+
+    <textarea
+      id="productDescription"
+      placeholder="Descripción del producto"
+    ></textarea>
+
+    <button class="btn addProductBtn">
+      Agregar Producto
+    </button>
+  </div>
+</aside>
 
     <!-- MODAL DETALLES -->
 
@@ -198,9 +259,17 @@
 
         <p id="modalText"></p>
 
-        <button id="closeModal" class="btn">Cerrar</button>
+        <button id="closeModal" class="btn">
+          Cerrar
+        </button>
       </div>
     </section>
+
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="./js/supabase.js"></script>
 
     <script src="./js/nav.js"></script>
   </body>

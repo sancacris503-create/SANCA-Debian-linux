@@ -67,22 +67,27 @@ signUpForm.addEventListener("submit", async (e) => {
 
   // CREAR PERFIL
 
-  if (user) {
-    const { error: perfilError } = await db.from("perfiles").insert([
-      {
-        id: user.id,
-        nombre,
-        email,
-      },
-    ]);
+ if (user) {
 
-    if (perfilError) {
-      console.error("Error perfil:", perfilError);
-      alert("Error al crear perfil: " + perfilError.message);
-      return;
-    }
+  let rol = "cliente";
+
+  if (email.toLowerCase().endsWith("@salsaivasacea.com")) {
+    rol = "admin";
   }
 
+  const { error: perfilError } = await db.from("perfiles").insert([
+    {
+      id: user.id,
+      nombre,
+      email,
+      rol,
+    },
+  ]);
+
+  if (perfilError) {
+    console.log(perfilError);
+  }
+}
   // LOGIN AUTOMÁTICO
 
   const { error: loginError } = await db.auth.signInWithPassword({
