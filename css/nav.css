@@ -353,15 +353,13 @@ body {
 .admin-panel {
   position: fixed;
   top: 0;
-  right: -420px;
-  width: 380px;
+  right: -450px;
+  width: 400px;
   height: 100%;
   background: white;
-  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 3000;
   transition: 0.4s;
-  z-index: 2500;
-  display: flex;
-  flex-direction: column;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .admin-panel.show {
@@ -372,23 +370,5 @@ body {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-}
-
-.admin-content input,
-.admin-content select,
-.admin-content textarea {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-}
-
-.admin__icon {
-  cursor: pointer;
-  color: white;
-  font-weight: 600;
-}
-
-.admin__icon:hover {
-  color: var(--primary);
+  gap: 15px;
 }
